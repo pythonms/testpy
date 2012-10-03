@@ -14,3 +14,4 @@ foo()
 #dodalem komentarz 
 print os.name
 print os.__doc__
+print os.environ
