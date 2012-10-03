@@ -13,7 +13,7 @@ y = 'abc'
 print x,y
 print 'end'
 foo()
-#dodalem komentarz ������ąśę
+#dodalem komentarz ąźńłóąśźźżÓŁĄŻŹĆĘąśę
 print os.name
 print os.__doc__
 print os.environ 
