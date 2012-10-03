@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 
@@ -11,7 +13,7 @@ y = 'abc'
 print x,y
 print 'end'
 foo()
-#dodalem komentarz Ä…Å›Ä‡
+#dodalem komentarz ¹œœ¿ê¹ó³
 print os.name
 print os.__doc__
-print os.environ
+print os.environ 
