@@ -2,6 +2,8 @@
 
 import os
 
+def bar(x=3):
+   return x*10 
 
 def foo():
     print 'foo'
@@ -17,4 +19,5 @@ foo()
 print os.name
 print os.__doc__
 print os.environ 
+print bar()
 print 'ąśę'
