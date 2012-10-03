@@ -11,3 +11,5 @@ y = 'abc'
 print x,y
 print 'end'
 foo()
+#dodalem komentarz 
+print os.name
