@@ -17,3 +17,4 @@ foo()
 print os.name
 print os.__doc__
 print os.environ 
+print 'ąśż'
