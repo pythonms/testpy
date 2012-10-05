@@ -9,7 +9,7 @@ def foo():
     print 'foo' * 3
     print 'line' * 2 * 3
     
-    
+# koment
 x = 123
 y = 'abc'
 
