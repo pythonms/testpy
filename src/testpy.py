@@ -19,7 +19,54 @@ print 'end'
 foo()
 #dodalem komentarz ąśżźńółÓŁąśę
 print os.name
-print os.__doc__
+#print os.__doc__
 print os.environ 
 print bar()
 print 'ąśę'
+
+class A(object):
+    def __init__(self):
+        self.x = 'ax'
+    def poka(self):
+        print self.x
+        
+class B(A):
+    def __init__(self):
+        self.x = 'bx'
+        self.y = 'by'
+    def poka(self):
+        print self.x,self.y
+        
+class C(B):
+    def __init__(self):
+        super(C,self).__init__()
+        self.z = 'cz'
+
+
+d = C()
+print d.z,d.x,d.y
+
+
+class A2(object):
+    def __init__(self):
+        super(A2,self).__init__()
+        self.x = 'ax'
+    def poka(self):
+        print self.x
+        
+class B2(object):
+    def __init__(self):
+        super(B2,self).__init__()
+        self.x = 'bx'
+        self.y = 'by'
+    def poka(self):
+        print self.x,self.y
+        
+class C2(A2,B2):
+    def __init__(self):
+        super(C2,self).__init__()
+        self.z = 'cz'
+
+
+d = C2()
+print d.z,d.x,d.y
