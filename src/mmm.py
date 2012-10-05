@@ -17,12 +17,12 @@ y = 'abc'
 print x,y
 print 'end'
 foo()
-#dodalem komentarz ¹œ¿Ÿñó³Ó£¹œê
+#dodalem komentarz Ä…Å›Å¼ÅºÄ™ Ã³Å‚
 print os.name
 #print os.__doc__
 print os.environ 
 print bar()
-print '¹œê'
+print 'Ä…Å›Å¼'
 
 class A(object):
     def __init__(self):
