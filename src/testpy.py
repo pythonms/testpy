@@ -7,7 +7,7 @@ def bar(x=3):
 
 def foo():
     print 'foo'
-    print 'line' * 2
+    print 'line' * 2 * 3
     
     
 x = 123
