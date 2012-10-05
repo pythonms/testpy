@@ -3,7 +3,7 @@
 import os
 
 def bar(x=3):
-    return x*10 
+    return x * 10 
 
 def foo():
     print 'foo'
