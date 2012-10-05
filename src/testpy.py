@@ -10,6 +10,7 @@ def foo():
     print 'line' * 2 * 3
     
 # koment
+# koment 2
 x = 123
 y = 'abc'
 
