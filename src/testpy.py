@@ -6,7 +6,7 @@ def bar(x=3):
     return x * 10 
 
 def foo():
-    print 'foo'
+    print 'foo' * 3
     print 'line' * 2 * 3
     
     
