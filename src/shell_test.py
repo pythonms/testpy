@@ -34,7 +34,7 @@ class M(object):
 x = M()
 x.poka()
 print x
-print u'¹œæ'
+print u'Ä…Å›Å¼Åº'
 x.mline()
 
 if __name__ == '__main__':
