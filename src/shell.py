@@ -20,7 +20,7 @@ for i in dir(__main__):
     exec 'print __main__.'+i
     
 #f_exec = open('shell_test.py')
-f_exec = open('run.py')
+f_exec = open('shell_test.py')
 code = f_exec.readlines()
 exec f_exec
 
