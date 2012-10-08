@@ -28,7 +28,7 @@ exec f_exec
 
 import sys
 import StringIO
-# create file-like string to capture output
+# create file-like string to capture output 
 codeOut = StringIO.StringIO()
 codeErr = StringIO.StringIO()
 code = """
