@@ -35,7 +35,7 @@ code = """
 def f(x):
     x = x + 1
     return x
-print 'This is my output'
+print 'This is my output '
 """
 # capture output and errors
 sys.stdout = codeOut
