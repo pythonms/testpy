@@ -37,6 +37,7 @@ print x
 print u'ąśżź'
 x.mline()
 
+
 if __name__ == '__main__':
     print 'main'
     
