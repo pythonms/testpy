@@ -79,3 +79,21 @@ print subprocess.Popen(['c:\Python27\python.exe'] + ['D:\dysk_c\python_cpp\\test
 #os.spawnlpe(os.P_NOWAIT, "/bin/mycmd", "mycmd", "myarg", env)
 #==>
 ## subprocess.Popen(["cmd", "ls -al"], env={"PATH": "/usr/bin"})
+
+bufsize = 4092
+# pipe = os.popen("cmd", 'r', bufsize)
+# ==>
+##pipe = subprocess.Popen("cmd", shell=True, bufsize=bufsize, stdout=subprocess.PIPE).stdout
+
+# pipe = os.popen("cmd", 'w', bufsize)
+# ==>
+##pipe = subprocess.Popen("cmd", shell=True, bufsize=bufsize, stdin=subprocess.PIPE).stdin
+
+# (child_stdin, child_stdout) = os.popen2("cmd", mode, bufsize)
+# ==>
+##p = subprocess.Popen("cmd", shell=True, bufsize=bufsize,stdin=subprocess.PIPE,
+##                      stdout=subprocess.PIPE)
+##(child_stdin, child_stdout) = (p.stdin, p.stdout)
+
+##p = subprocess.Popen(["c:\Python27\python.exe", "D:\dysk_c\python_cpp\\testpy\src\shell_test.py"], bufsize=bufsize, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+##(child_stdin, child_stdout) = (p.stdin, p.stdout)
