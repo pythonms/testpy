@@ -9,6 +9,8 @@ Created on 08-10-2012
 
 import os
 import sys
+import time
+
 print dir(sys.stdout)
 print sys.stdout.encoding 
 
@@ -26,7 +28,8 @@ class M(object):
         print self.x, self.y
     def mline(self):
         f=open('fout.txt','w+')
-        for i in range(10):
+        for i in range(20):
+            time.sleep(0.5)
             print 'line',i
             f.write('line'+str(i)+'\n')
         f.close()
@@ -36,7 +39,8 @@ x.poka()
 print x
 print u'ąśżź'
 x.mline()
-
+print os.getpid()
+x.cvb
 
 if __name__ == '__main__':
     print 'main'
