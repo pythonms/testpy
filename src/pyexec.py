@@ -14,6 +14,7 @@ mid = machine.get_machine_info()
 print 'Your System Config Section:',mid
 config = ConfigParser.ConfigParser()
 config.read('main.cfg')
+
 try:
     python_path = config.get(mid, 'python_path')
     work_dir = config.get(mid, 'work_dir')
@@ -46,12 +47,11 @@ try:
     proc = subprocess.Popen([python_path] + \
                             [work_dir + exec_file],shell=False)
     print 'PID z try',proc.pid
-    
 except:
     print 'PRINT Exception:'
 finally:
     print 'END'
-
+    
 for i in range(5):
     time.sleep(1)
     print proc
