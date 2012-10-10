@@ -6,7 +6,9 @@ import time
 import ConfigParser
 import machine
 
-
+#===============================================================================
+# Config: set your system variables
+#===============================================================================
 mid = machine.get_machine_info()
 
 config = ConfigParser.ConfigParser()
@@ -15,7 +17,9 @@ python_path = config.get(mid, 'python_path')
 work_dir = config.get(mid, 'work_dir')
 exec_file = config.get(mid, 'exec_file')
 
-# Set configuration (before commit comment this )
+#===============================================================================
+# Set configuration (before commit comment this)
+#===============================================================================
 #config = ConfigParser.RawConfigParser()
 #config.add_section(mid)
 #config.set(mid, 'python_path', 'C:/Python27/python.exe')
