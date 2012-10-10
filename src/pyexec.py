@@ -3,8 +3,15 @@
 import subprocess
 import os
 import time
+import ConfigParser
+import machine
+
+config = ConfigParser.RawConfigParser()
 
 print os.getpid()
+print os.getcwdu()
+
+print machine.get_machine_info()
 
 try:
     proc = subprocess.Popen(['C:\Python27\python.exe'] +

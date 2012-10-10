@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/machine.py=utf-8
 encoding//src/mmm.py=utf-8
 encoding//src/pyexec.py=utf-8
 encoding//src/shell.py=utf-8
