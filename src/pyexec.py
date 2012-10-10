@@ -5,6 +5,7 @@ import os
 import time
 import ConfigParser
 import machine
+import __main__
 
 #===============================================================================
 # Config: set your system variables
@@ -29,8 +30,9 @@ exec_file = config.get(mid, 'exec_file')
 #with open('main.cfg', 'wb') as configfile:
 #    config.write(configfile)
 
-
+pid = os.getpid()
 try:
+    print __main__.__file__, 'PID:', pid 
     proc = subprocess.Popen([python_path] +
                             [work_dir + exec_file],shell=False)
     print 'PID z try',proc.pid
