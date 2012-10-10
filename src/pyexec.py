@@ -61,4 +61,4 @@ try:
     proc.kill()
 except WindowsError,e:
     print e
-    print 'Brak procesu'
+    print "Process dasn't exist"
