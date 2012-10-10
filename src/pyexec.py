@@ -11,25 +11,39 @@ import __main__
 # Config: set your system variables
 #===============================================================================
 mid = machine.get_machine_info()
+print 'Your System Config Section:',mid
+mid = 'xxxxxxxxxxxxx123'
 
 config = ConfigParser.ConfigParser()
 config.read('main.cfg')
-python_path = config.get(mid, 'python_path')
-work_dir = config.get(mid, 'work_dir')
-exec_file = config.get(mid, 'exec_file')
 
-#===============================================================================
-# Set configuration execute only one!!! (before commit comment this)
-#===============================================================================
-#config = ConfigParser.RawConfigParser()
-#config.add_section(mid)
-#config.set(mid, 'python_path', 'C:/Python27/python.exe')
-#config.set(mid, 'work_dir', os.getcwdu().replace('\\','/'))
-#config.set(mid, 'exec_file', '/shell.py')
-## Writing our configuration file to 'main.cfg'
-#with open('main.cfg', 'a+b') as configfile:
-#    config.write(configfile)
+try:
+    python_path = config.get(mid, 'python_path')
+    work_dir = config.get(mid, 'work_dir')
+    exec_file = config.get(mid, 'exec_file')
+except ConfigParser.NoSectionError,e:
+    print "!!! section "+mid+" dasn't exist !!!"
+    print e
+    print 'create section:' + mid
+    config = ConfigParser.RawConfigParser()
+    config.add_section(mid)
+    config.set(mid, 'python_path', 'C:/Python27/python.exe')
+    config.set(mid, 'work_dir', os.getcwdu().replace('\\','/'))
+    config.set(mid, 'exec_file', '/shell.py')
+    # Writing our configuration file to 'main.cfg'
+    with open('main.cfg', 'a+b') as configfile:
+        config.write(configfile)
+    
+    #===========================================================================
+    # Set configuration execute only one!!! Try again !
+    #===========================================================================
+    python_path = config.get(mid, 'python_path')
+    work_dir = config.get(mid, 'work_dir')
+    exec_file = config.get(mid, 'exec_file')
 
+#===========================================================================
+# Go!
+#===========================================================================
 pid = os.getpid()
 try:
     print __main__.__file__, 'PID:', pid 
@@ -42,7 +56,7 @@ except:
 finally:
     print 'END'
 
-for i in range(15):
+for i in range(5):
     time.sleep(1)
     print proc
     print proc.pid
