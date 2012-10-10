@@ -19,7 +19,7 @@ work_dir = config.get(mid, 'work_dir')
 exec_file = config.get(mid, 'exec_file')
 
 #===============================================================================
-# Set configuration (before commit comment this)
+# Set configuration execute only one!!! (before commit comment this)
 #===============================================================================
 #config = ConfigParser.RawConfigParser()
 #config.add_section(mid)
