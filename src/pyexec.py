@@ -12,11 +12,8 @@ import __main__
 #===============================================================================
 mid = machine.get_machine_info()
 print 'Your System Config Section:',mid
-mid = 'xxxxxxxxxxxxx123'
-
 config = ConfigParser.ConfigParser()
 config.read('main.cfg')
-
 try:
     python_path = config.get(mid, 'python_path')
     work_dir = config.get(mid, 'work_dir')
@@ -33,18 +30,17 @@ except ConfigParser.NoSectionError,e:
     # Writing our configuration file to 'main.cfg'
     with open('main.cfg', 'a+b') as configfile:
         config.write(configfile)
-    
     #===========================================================================
     # Set configuration execute only one!!! Try again !
     #===========================================================================
     python_path = config.get(mid, 'python_path')
     work_dir = config.get(mid, 'work_dir')
     exec_file = config.get(mid, 'exec_file')
-
 #===========================================================================
 # Go!
 #===========================================================================
 pid = os.getpid()
+
 try:
     print __main__.__file__, 'PID:', pid 
     proc = subprocess.Popen([python_path] + \
