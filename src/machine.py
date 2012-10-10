@@ -10,7 +10,10 @@ import platform
 
 
 def get_machine_info():
-    """Get machine info system_ver_32/64bit_hostname_pyVer"""
+    """
+    Get machine info: 
+    system_ver_32/64bit_hostname_pyVer
+    """
     machine_id = platform.system() +"_"+ platform.release() +'_' \
             + platform.machine() +'_'+platform.node()+ '_pyVer:' \
             + platform.python_version()
@@ -19,3 +22,4 @@ def get_machine_info():
 
 if __name__ == '__main__':
     print get_machine_info()
+    print get_machine_info.__doc__

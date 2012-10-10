@@ -6,16 +6,29 @@ import time
 import ConfigParser
 import machine
 
+
+mid = machine.get_machine_info()
+
+config = ConfigParser.ConfigParser()
+config.read('main.cfg')
+python_path = config.get(mid, 'python_path')
+work_dir = config.get(mid, 'work_dir')
+exec_file = config.get(mid, 'exec_file')
+
 config = ConfigParser.RawConfigParser()
+config.add_section(mid)
+config.set(mid, 'python_path', 'C:/Python27/python.exe')
+config.set(mid, 'work_dir', os.getcwdu().replace('\\','/'))
+config.set(mid, 'exec_file', '/shell.py')
 
-print os.getpid()
-print os.getcwdu()
+# Writing our configuration file to 'example.cfg'
+with open('main.cfg', 'wb') as configfile:
+    config.write(configfile)
 
-print machine.get_machine_info()
 
 try:
-    proc = subprocess.Popen(['C:\Python27\python.exe'] +
-                            ['C:\mmm\_repo\\testpy\src\shell.py'],shell=False)
+    proc = subprocess.Popen([python_path] +
+                            [work_dir + exec_file],shell=False)
     print 'PID z try',proc.pid
     
 except:

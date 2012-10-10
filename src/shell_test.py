@@ -40,7 +40,6 @@ print x
 print u'ąśżź'
 x.mline()
 print os.getpid()
-x.cvb
 
 if __name__ == '__main__':
     print 'main'
