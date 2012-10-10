@@ -21,14 +21,14 @@ exec_file = config.get(mid, 'exec_file')
 #===============================================================================
 # Set configuration (before commit comment this)
 #===============================================================================
-config = ConfigParser.RawConfigParser()
-config.add_section(mid)
-config.set(mid, 'python_path', 'C:/Python27/python.exe')
-config.set(mid, 'work_dir', os.getcwdu().replace('\\','/'))
-config.set(mid, 'exec_file', '/shell.py')
-# Writing our configuration file to 'main.cfg'
-with open('main.cfg', 'w+b') as configfile:
-    config.write(configfile)
+#config = ConfigParser.RawConfigParser()
+#config.add_section(mid)
+#config.set(mid, 'python_path', 'C:/Python27/python.exe')
+#config.set(mid, 'work_dir', os.getcwdu().replace('\\','/'))
+#config.set(mid, 'exec_file', '/shell.py')
+## Writing our configuration file to 'main.cfg'
+#with open('main.cfg', 'a+b') as configfile:
+#    config.write(configfile)
 
 pid = os.getpid()
 try:
