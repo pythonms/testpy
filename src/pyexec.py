@@ -21,19 +21,19 @@ exec_file = config.get(mid, 'exec_file')
 #===============================================================================
 # Set configuration (before commit comment this)
 #===============================================================================
-#config = ConfigParser.RawConfigParser()
-#config.add_section(mid)
-#config.set(mid, 'python_path', 'C:/Python27/python.exe')
-#config.set(mid, 'work_dir', os.getcwdu().replace('\\','/'))
-#config.set(mid, 'exec_file', '/shell.py')
-## Writing our configuration file to 'main.cfg'
-#with open('main.cfg', 'wb') as configfile:
-#    config.write(configfile)
+config = ConfigParser.RawConfigParser()
+config.add_section(mid)
+config.set(mid, 'python_path', 'C:/Python27/python.exe')
+config.set(mid, 'work_dir', os.getcwdu().replace('\\','/'))
+config.set(mid, 'exec_file', '/shell.py')
+# Writing our configuration file to 'main.cfg'
+with open('main.cfg', 'w+b') as configfile:
+    config.write(configfile)
 
 pid = os.getpid()
 try:
     print __main__.__file__, 'PID:', pid 
-    proc = subprocess.Popen([python_path] +
+    proc = subprocess.Popen([python_path] + \
                             [work_dir + exec_file],shell=False)
     print 'PID z try',proc.pid
     
